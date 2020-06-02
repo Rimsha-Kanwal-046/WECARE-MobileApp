@@ -55,7 +55,7 @@ export default class App extends Component {
   render() {
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Dietplan">
+        <Stack.Navigator initialRouteName="Home">
           <Stack.Screen
             name="Login"
             component={Login}
