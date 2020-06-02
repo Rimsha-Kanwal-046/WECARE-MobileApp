@@ -1,0 +1,4 @@
+#Sat May 23 06:18:59 PKT 2020
+base.0=C\:\\Users\\Nimra Iftikhar\\Documents\\final fyp\\app\\wecare\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex
