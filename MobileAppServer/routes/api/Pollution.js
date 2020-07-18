@@ -8,7 +8,7 @@ var ds = '';
 var dd = '';
 var ed = '';
 var hh = '';
-router.post('/', function(req, res, next) {
+router.post('/', function (req, res, next) {
   console.log('request Receieved');
   const { city, disease, dayDifference, endingDay, hour2 } = req.body;
 
@@ -22,7 +22,7 @@ router.post('/', function(req, res, next) {
   res.end('');
 });
 
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   console.log('request Receieved');
   // const { city, days, disease, sensitive } = req.body;
 
@@ -43,14 +43,15 @@ router.get('/', function(req, res, next) {
   var options = {
     mode: 'text',
     pythonOptions: ['-u'],
-    scriptPath: 'C:/Users/Nimra Iftikhar/Documents/final fyp/WECARE/python',
+    scriptPath: 'D:/FYP/WECARE-MobileApp/MobileAppServer/python',
+    // scriptPath: '../../python',
 
     headers: { 'content-type': 'application/json' },
 
-    args: [c, ds, dd, ed, hh]
+    args: [c, ds, dd, ed, hh],
   };
 
-  PythonShell.run('test.py', options, function(err, results) {
+  PythonShell.run('test.py', options, function (err, results) {
     if (err) throw err;
     res.send({ express: results });
   });

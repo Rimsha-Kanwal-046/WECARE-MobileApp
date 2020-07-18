@@ -11,6 +11,7 @@ import {
   ScrollView,
   TouchableOpacityComponent,
   ImageBackground,
+  Linking,
 } from 'react-native';
 import {Actions} from 'react-native-router-flux';
 import Geolocation from 'react-native-geolocation-service';
@@ -18,14 +19,31 @@ import Geolocation from 'react-native-geolocation-service';
 export default class Exercises extends Component {
   render() {
     return (
-      <ScrollView>
-        <View style={styles.container}>
-          <View style={{marginBottom: 40, marginTop: 30}}>
+      <View style={styles.container}>
+        <ScrollView>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('Specificexercises')}
+            style={{
+              alignSelf: 'center',
+              width: 280,
+              height: 70,
+              backgroundColor: '#786D85',
+              margin: 10,
+              padding: 10,
+              borderRadius: 20,
+            }}>
+            <Text style={{fontSize: 22, color: 'white', textAlign: 'center'}}>
+              Search Your Specific Exercises Here
+            </Text>
+          </TouchableOpacity>
+          <View style={{marginBottom: 40, marginTop: 10}}>
             <Text style={{color: 'black', fontSize: 26, fontWeight: 'bold'}}>
               Recommended
             </Text>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Fullbody')}>
+              onPress={() =>
+                this.props.navigation.navigate('Fullbodyexercises')
+              }>
               <View style={styles.textview}>
                 <ImageBackground
                   source={require('../images/exercises/a.jpg')}
@@ -216,8 +234,90 @@ export default class Exercises extends Component {
               </View>
             </View>
           </View>
+          <TouchableOpacity
+            style={{
+              width: 300,
+              height: 50,
+              backgroundColor: '#dcdcdc',
+              alignSelf: 'center',
+              margin: 10,
+              padding: 10,
+            }}
+            onPress={() => Linking.openURL('https://youtu.be/bU0A-UwHHpU')}>
+            <Text
+              style={{
+                color: '#B12F31',
+                fontWeight: 'bold',
+                fontSize: 22,
+                alignSelf: 'center',
+              }}>
+              3D Models For Yoga
+            </Text>
+          </TouchableOpacity>
+        </ScrollView>
+
+        <View style={styles.footer}>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'center',
+              alignContent: 'center',
+
+              marginTop: 10,
+            }}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Home')}
+              style={{
+                marginLeft: 5,
+                marginRight: 40,
+              }}>
+              <Image
+                source={require('../images/navbar/home.png')}
+                style={{
+                  width: 30,
+                  height: 30,
+                  alignSelf: 'center',
+                  justifyContent: 'center',
+                }}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                marginLeft: 55,
+                marginRight: 40,
+              }}
+              onPress={() => this.props.navigation.navigate('Notification')}>
+              <Image
+                source={require('../images/navbar/bell.png')}
+                style={{
+                  width: 30,
+                  height: 30,
+                  alignSelf: 'center',
+                  justifyContent: 'center',
+                }}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                marginLeft: 55,
+                marginRight: 20,
+              }}
+              onPress={() => this.props.navigation.navigate('UserProfile')}
+              // onPress={() => this.props.navigation.navigate('Notification')}
+            >
+              <Image
+                source={require('../images/navbar/user.png')}
+                style={{
+                  width: 30,
+                  height: 30,
+                  alignSelf: 'center',
+                  justifyContent: 'center',
+                }}
+              />
+            </TouchableOpacity>
+          </View>
         </View>
-      </ScrollView>
+      </View>
     );
   }
 }
@@ -290,5 +390,13 @@ const styles = StyleSheet.create({
     marginBottom: 7,
     marginHorizontal: 10,
     justifyContent: 'center',
+  },
+  footer: {
+    // position: 'absolute',
+    backgroundColor: '#B12F31',
+    marginBottom: 30,
+    width: 360,
+    height: 60,
+    // marginTop: 506,
   },
 });

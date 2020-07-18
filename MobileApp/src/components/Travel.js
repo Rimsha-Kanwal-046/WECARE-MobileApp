@@ -34,7 +34,12 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {floor} from 'mathjs';
 import {ceil} from 'mathjs';
 import {abs} from 'mathjs';
-
+import {
+  Collapse,
+  CollapseHeader,
+  CollapseBody,
+  AccordionList,
+} from 'accordion-collapse-react-native';
 const instructions = [
   {
     startpm: '0',
@@ -177,8 +182,20 @@ const instructions = [
 const currentdate = new Date();
 const maxdate = moment()
   .toDate()
-  .setDate(currentdate.getDate() + 13); //set new date 7 days from now(the correct 7 days)// Teach Autosuggest how to calculate suggestions for any given input value.
-
+  .setDate(currentdate.getDate() + 13);
+var grap = [
+  {
+    seriesName: 'series1',
+    data: [
+      // {x: '2018-02-01', y: 30},
+      // {x: '2018-02-02', y: 200},
+      // {x: '2018-02-03', y: 170},
+      // {x: '2018-02-04', y: 250},
+      // {x: '2018-02-05', y: 70},
+    ],
+    color: '#297AB1',
+  },
+];
 export default class Travel extends Component {
   constructor(props) {
     super();
@@ -189,6 +206,7 @@ export default class Travel extends Component {
       // date: '',
       // enddate: '',
       isVisible: false,
+      graphdata: [],
 
       data: [
         {day: 1, effect: 'moderate', precautions: 'no'},
@@ -215,13 +233,12 @@ export default class Travel extends Component {
       all_suggestions: [],
       daily_suggestion: [],
       hour2: '',
-      //set new date 7 days from now(the correct 7 days)// Teach Autosuggest how to calculate suggestions for any given input value.
     };
   }
   setcity = val => {
     this.setState({
       value: val,
-      lastDate,
+      // lastDate,
     });
   };
   setdisease = val => {
@@ -249,10 +266,7 @@ export default class Travel extends Component {
     }
   };
   submit = () => {
-    // if (this.state.endingDay < 1) {
-    //   alert('Please enter correct dates');
-    // }
-    fetch('http://192.168.43.64:1000/api/pollution', {
+    fetch('http:/192.168.1.100:1000/api/pollution', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -269,7 +283,6 @@ export default class Travel extends Component {
     })
       .then(async data => {
         var alldata = await this.callBackendAPI();
-        // console.log(alldata.express[1]);
 
         ///////////pm25 of graph///////
         var pm25val = alldata.express[1];
@@ -281,9 +294,39 @@ export default class Travel extends Component {
             value.toString().substring('8', value.length - 2),
           );
         });
+        ///////////////////SPLITTING Time///////////////////////////
+        var timeval = alldata.express[2];
+        var newtime = timeval.toString().substring('1', timeval.length - 1);
+        var timesplitted = newtime.split(',');
+        var finaltime = [0];
+        timesplitted.forEach(function(value) {
+          var x = value.toString().substring('2', value.length - 1);
+          if (x != '') {
+            finaltime.push(x);
+          }
+        });
+        // finaltime.map((i, e) =>
+        //   graphdata.push({x: i + '', y: finalArrayPM25[e]}),
+        // );
+        var data1 = [];
+        for (let i = 0; i < finaltime.length; i++) {
+          data1.push({x: finaltime[i] + '', y: parseInt(finalArrayPM25[i])});
+        }
+        console.log(data1);
+        // finaltime.map((i, e) => data1.concat({x: i + '', y: i + 5}));
+
+        var graphd = [
+          {
+            seriesName: 'series1',
+            data: data1,
+            color: '#297AB1',
+          },
+        ];
+        this.setState({
+          graphdata: graphd,
+        });
         /////////////////////fo displaying on mobile//////
         var chunk = this.chunkArray(finalArrayPM25, 24);
-        // console.log(chunk);
         var cardpm25 = [];
         for (let i = 0; i < chunk.length; i++) {
           let arrAvg = 0;
@@ -296,14 +339,12 @@ export default class Travel extends Component {
 
           cardpm25.push(arrAvg);
         }
-        console.log(cardpm25);
         var type = '';
         if (this.state.disease != 'Normal') {
           type = 'Other';
         } else {
           type = 'Normal';
         }
-        //console.log(this.state.disease);
 
         for (let j = 0; j < cardpm25.length; j++) {
           var pm25 = floor(cardpm25[j]);
@@ -327,7 +368,6 @@ export default class Travel extends Component {
             daily_suggestion: this.state.daily_suggestion.concat(dailyObj),
           });
         }
-        console.log(this.state.daily_suggestion);
       })
 
       .catch(err => alert(err));
@@ -387,15 +427,9 @@ export default class Travel extends Component {
   };
 
   startDifference() {
-    var d1 = new Date(); //firstDate
-    var d2 = new Date(this.state.startDate); //SecondDate
-
-    var Difference_In_Time = abs(d1 - d2); //in milliseconds
-
-    // this.state.startDate.getTime() - new Date().getTime();
-    // this.state.startDate.getTime() - tempDate.getTime();
-
-    // // To calculate the no. of days between two dates
+    var d1 = new Date();
+    var d2 = new Date(this.state.startDate);
+    var Difference_In_Time = abs(d1 - d2);
     var Difference_In_Days = ceil(Difference_In_Time / (1000 * 3600 * 24));
 
     this.setState({
@@ -425,7 +459,7 @@ export default class Travel extends Component {
   }
 
   callBackendAPI = async () => {
-    const response = await fetch('http://192.168.43.64:1000/api/Pollution');
+    const response = await fetch('http://192.168.1.100:1000/api/Pollution');
     const body = await response.json();
 
     if (response.status !== 200) {
@@ -479,7 +513,6 @@ export default class Travel extends Component {
   renderResults = () => {
     this.setState({
       isVisible: !this.state.isVisible,
-      //toggles the visibilty of the text
     });
   };
 
@@ -490,7 +523,6 @@ export default class Travel extends Component {
         data: [30, 200, 170, 250, 10],
         color: '#297AB1',
       },
-      // { seriesName: 'series2', data: [20, 100, 150, 130, 15], color: 'yellow' }
     ];
     return (
       <ScrollView>
@@ -504,7 +536,8 @@ export default class Travel extends Component {
                 marginTop: 35,
                 marginLeft: 10,
                 marginRight: 10,
-              }}></Image>
+              }}
+            />
             <Text style={styles.heading}>TRAVEL GUIDE</Text>
           </View>
           <View style={{flexDirection: 'row'}}>
@@ -516,7 +549,8 @@ export default class Travel extends Component {
                 marginTop: 5,
                 marginLeft: 10,
                 marginRight: 10,
-              }}></Image>
+              }}
+            />
             <Text
               style={{
                 fontSize: 16,
@@ -539,7 +573,8 @@ export default class Travel extends Component {
                   marginTop: 5,
                   marginLeft: 10,
                   marginRight: 10,
-                }}></Image>
+                }}
+              />
               <Picker
                 style={styles.inputfield}
                 selectedValue={this.state.value}
@@ -640,7 +675,8 @@ export default class Travel extends Component {
                   marginTop: 5,
                   marginLeft: 10,
                   marginRight: 10,
-                }}></Image>
+                }}
+              />
 
               <Picker
                 style={styles.inputfield}
@@ -690,15 +726,7 @@ export default class Travel extends Component {
               </Text>
             </TouchableOpacity>
           </View>
-          {/* 
-          <DotIndicator
-            color="red"
-            animationDuration={1200}
-            count={5}
-            animating={true}
-            interaction={true}
-            hidesWhenStopped={true}
-          /> */}
+
           {this.state.isVisible ? (
             <View style={{flexDirection: 'row'}}>
               <Text
@@ -719,13 +747,27 @@ export default class Travel extends Component {
                   marginLeft: 150,
                   marginRight: 10,
                   marginBottom: 30,
-                }}></Image>
+                }}
+              />
             </View>
           ) : null}
           <FlatList
             data={this.state.daily_suggestion}
             renderItem={this.renderItem}
           />
+          <Collapse>
+            <CollapseHeader>
+              <View style={styles.header}>
+                <Text
+                  style={{fontSize: 22, color: 'white', alignSelf: 'center'}}>
+                  Graph
+                </Text>
+              </View>
+            </CollapseHeader>
+            <CollapseBody>
+              <PureChart data={this.state.graphdata} type="bar" />
+            </CollapseBody>
+          </Collapse>
         </View>
       </ScrollView>
     );
@@ -788,6 +830,18 @@ const styles = StyleSheet.create({
     height: 300,
     marginTop: 7,
     marginBottom: 10,
+    justifyContent: 'center',
+  },
+  header: {
+    backgroundColor: '#B12F31',
+    width: 330,
+    height: 40,
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: 'black',
+    marginTop: 5,
+    marginBottom: 10,
+
     justifyContent: 'center',
   },
 });

@@ -45,7 +45,7 @@ export default class Dietplan extends Component {
   submit = () => {
     //  alert(this.state.goal);
     //alert(this.state.city+" "+this.state.days+" "+this.state.disease+" "+this.state.sensitive);
-    fetch('http://192.168.43.64:1000/api/diet/get_calorie', {
+    fetch('http://192.168.1.100:1000/api/diet/get_calorie', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ export default class Dietplan extends Component {
   };
 
   getplan = async () => {
-    return fetch('http://192.168.43.64:1000/api/diet', {
+    return fetch('http://192.168.1.100:1000/api/diet', {
       method: 'GET',
 
       headers: {
@@ -156,312 +156,389 @@ export default class Dietplan extends Component {
 
   render() {
     return (
-      <ScrollView>
-        <View style={styles.container}>
-          <View style={{flexDirection: 'row'}}>
-            <Image
-              source={require('../images/dieticon.png')}
+      <View>
+        <ScrollView>
+          <View style={styles.container}>
+            <View style={{flexDirection: 'row'}}>
+              <Image
+                source={require('../images/dieticon.png')}
+                style={{
+                  width: 80,
+                  height: 80,
+                  marginTop: 35,
+                  marginLeft: 10,
+                  marginRight: 19,
+                }}
+              />
+              <View style={{marginTop: 20}}>
+                <Text style={styles.heading}>Diet Plans</Text>
+              </View>
+            </View>
+
+            <View style={{flexDirection: 'row'}}>
+              <Image
+                source={require('../images/test.png')}
+                style={{
+                  width: 25,
+                  height: 25,
+                  marginTop: 5,
+                  marginLeft: 10,
+                  marginRight: 10,
+                }}
+              />
+              <Text
+                style={{
+                  fontSize: 16,
+                  color: '#B12F31',
+                  marginTop: 6,
+                  marginBottom: 10,
+                  justifyContent: 'center',
+                  alignSelf: 'center',
+                }}>
+                Please Fill the Following Form
+              </Text>
+            </View>
+
+            <View style={styles.textview1}>
+              <View style={{flexDirection: 'row'}}>
+                <Image
+                  source={require('../images/height.png')}
+                  style={{
+                    width: 35,
+                    height: 35,
+                    marginTop: 5,
+                    marginLeft: 10,
+                    marginRight: 10,
+                  }}
+                />
+                <TextInput
+                  style={styles.inputfield}
+                  // placeholderTextColor="black"
+                  placeholder="Enter Height (In Feets)"
+                  value={this.state.height}
+                  onChangeText={this.setheight}
+                />
+              </View>
+              <View style={{flexDirection: 'row'}}>
+                <Image
+                  source={require('../images/weight.png')}
+                  style={{
+                    width: 35,
+                    height: 35,
+                    marginTop: 5,
+                    marginLeft: 10,
+                    marginRight: 10,
+                  }}
+                />
+                <TextInput
+                  style={styles.inputfield}
+                  // placeholderTextColor="black"
+                  placeholder="Enter Weight (In Kgs)"
+                  value={this.state.weight}
+                  onChangeText={this.setweight}
+                />
+              </View>
+              <TouchableOpacity
+                style={styles.button}
+                onPress={() => this.calbmi()}>
+                <Text
+                  style={{
+                    color: 'white',
+                    fontSize: 18,
+                    fontWeight: 'bold',
+                    alignSelf: 'center',
+                    justifyContent: 'center',
+                  }}>
+                  Submit
+                </Text>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.textview}>
+              <View
+                style={{
+                  width: 280,
+                  height: 70,
+                  marginBottom: 20,
+                  backgroundColor: 'white',
+                  alignSelf: 'center',
+                }}>
+                <Text>Your BMI VALUE IS {this.state.bmi}</Text>
+                <Text> {this.state.sugg}</Text>
+              </View>
+              <View style={{flexDirection: 'row'}}>
+                <Image
+                  source={require('../images/adult.png')}
+                  style={{
+                    width: 35,
+                    height: 45,
+                    marginTop: 5,
+                    marginLeft: 10,
+                    marginRight: 10,
+                  }}
+                />
+                <TextInput
+                  style={styles.inputfield}
+                  placeholder="Enter Age Here"
+                  value={this.state.age}
+                  onChangeText={this.setage}
+                />
+              </View>
+              <View style={{flexDirection: 'row'}}>
+                <Image
+                  source={require('../images/gender.png')}
+                  style={{
+                    width: 35,
+                    height: 35,
+                    marginTop: 5,
+                    marginLeft: 10,
+                    marginRight: 10,
+                  }}
+                />
+                <Picker
+                  style={styles.inputfield}
+                  //placeholder="Select an Option"
+                  selectedValue={this.state.gender}
+                  onValueChange={(itemValue, itemIndex) =>
+                    this.setState({gender: itemValue})
+                  }>
+                  <Picker.Item label="Selct a gender" value="" />
+
+                  <Picker.Item label="Male" value="male" />
+                  <Picker.Item label="Female" value="female" />
+                </Picker>
+              </View>
+              <View style={{flexDirection: 'row'}}>
+                <Image
+                  source={require('../images/barbell.png')}
+                  style={{
+                    width: 35,
+                    height: 35,
+                    marginTop: 5,
+                    marginLeft: 10,
+                    marginRight: 10,
+                  }}
+                />
+                <Picker
+                  style={styles.inputfield}
+                  // placeholder="Select an Option"
+                  selectedValue={this.state.activity}
+                  onValueChange={(itemValue, itemIndex) =>
+                    this.setState({activity: itemValue})
+                  }>
+                  <Picker.Item label="Select Activity Level " value="" />
+                  <Picker.Item
+                    label="Sedentary: Little or no exercise"
+                    value="sedentary"
+                  />
+                  <Picker.Item
+                    label="Light: Exercise 1-3 times/week"
+                    value="light"
+                  />
+                  <Picker.Item
+                    label="Active: Intense exercise 3-4 times/week"
+                    value="active"
+                  />
+                  <Picker.Item
+                    label="Very Active: Intense exercise 6-7 times/week"
+                    value="vactive"
+                  />
+                  <Picker.Item
+                    label="Extra Active: Very intense exercise daily"
+                    value="eactive"
+                  />
+                </Picker>
+              </View>
+              <TouchableOpacity
+                style={styles.button}
+                onPress={() => this.calintake()}>
+                <Text
+                  style={{
+                    color: 'white',
+                    fontSize: 18,
+                    fontWeight: 'bold',
+                    alignSelf: 'center',
+                    justifyContent: 'center',
+                  }}>
+                  Calorie Intake
+                </Text>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.textview3}>
+              <Text
+                style={{
+                  fontSize: 16,
+                  color: '#B12F31',
+                  marginTop: 6,
+                  marginBottom: 10,
+                  justifyContent: 'center',
+                  alignSelf: 'center',
+                }}>
+                Some suggested Diet Plans for you
+              </Text>
+              <View style={styles.textview2}>
+                <Text
+                  style={{color: 'black', fontSize: 16, alignSelf: 'center'}}>
+                  To Loose Weight
+                </Text>
+                <Text
+                  style={{color: 'black', fontSize: 16, alignSelf: 'center'}}>
+                  You Need "{this.state.loose}" calories/day
+                </Text>
+                <Text
+                  style={{color: 'black', fontSize: 16, alignSelf: 'center'}}>
+                  Tap To View Diet Plan
+                </Text>
+              </View>
+              <View style={styles.textview2}>
+                <Text
+                  style={{color: 'black', fontSize: 16, alignSelf: 'center'}}>
+                  To Maintain Weight
+                </Text>
+                <Text
+                  style={{color: 'black', fontSize: 16, alignSelf: 'center'}}>
+                  You Need {this.state.maintain} calories/day
+                </Text>
+                <Text
+                  style={{color: 'black', fontSize: 16, alignSelf: 'center'}}>
+                  Tap To View Diet Plan
+                </Text>
+              </View>
+              <View style={styles.textview2}>
+                <Text
+                  style={{color: 'black', fontSize: 16, alignSelf: 'center'}}>
+                  To Gain weight
+                </Text>
+                <Text
+                  style={{color: 'black', fontSize: 16, alignSelf: 'center'}}>
+                  You Need {this.state.gain} calories/day
+                </Text>
+                <Text
+                  style={{color: 'black', fontSize: 16, alignSelf: 'center'}}>
+                  Tap To View Diet Plan
+                </Text>
+              </View>
+              <View style={{flexDirection: 'row'}}>
+                <Image
+                  source={require('../images/different.png')}
+                  style={{
+                    width: 35,
+                    height: 35,
+                    marginTop: 5,
+                    marginLeft: 10,
+                    marginRight: 10,
+                  }}
+                />
+                <Picker
+                  style={styles.inputfield}
+                  //placeholder="Select an Option"
+                  selectedValue={this.state.goal}
+                  onValueChange={(itemValue, itemIndex) =>
+                    this.setState({goal: itemValue})
+                  }>
+                  <Picker.Item label="Choose an option" value="" />
+
+                  <Picker.Item
+                    label="To loose Weight"
+                    value={this.state.loose}
+                  />
+                  <Picker.Item
+                    label="To Maintain Weight"
+                    value={this.state.maintain}
+                  />
+                  <Picker.Item label="To Gain Weight" value={this.state.gain} />
+                </Picker>
+              </View>
+              <TouchableOpacity
+                style={styles.button}
+                onPress={() => this.submit()}>
+                <Text
+                  style={{
+                    color: 'white',
+                    fontSize: 18,
+                    fontWeight: 'bold',
+                    alignSelf: 'center',
+                    justifyContent: 'center',
+                  }}>
+                  Get Dietplan
+                </Text>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.textview1}>
+              <Text style={{fontSize: 18, color: '#B12F31'}}>Breakfast</Text>
+              <Text style={{fontSize: 16}}>
+                {this.state.diet_plan.breakfast}
+              </Text>
+              <Text style={{fontSize: 18, color: '#B12F31'}}>Lunch</Text>
+              <Text style={{fontSize: 16}}> {this.state.diet_plan.lunch}</Text>
+              <Text style={{fontSize: 18, color: '#B12F31'}}>Dinner</Text>
+              <Text style={{fontSize: 16}}> {this.state.diet_plan.dinner}</Text>
+              <Text style={{fontSize: 18, color: '#B12F31'}}>Snake</Text>
+              <Text style={{fontSize: 16}}> {this.state.diet_plan.snack}</Text>
+            </View>
+          </View>
+        </ScrollView>
+        <View style={styles.footer}>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'center',
+              alignContent: 'center',
+
+              marginTop: 10,
+            }}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Home')}
               style={{
-                width: 80,
-                height: 80,
-                marginTop: 35,
-                marginLeft: 10,
-                marginRight: 19,
+                marginLeft: 5,
+                marginRight: 40,
+              }}>
+              <Image
+                source={require('../images/navbar/home.png')}
+                style={{
+                  width: 30,
+                  height: 30,
+                  alignSelf: 'center',
+                  justifyContent: 'center',
+                }}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                marginLeft: 55,
+                marginRight: 40,
               }}
-            />
-            <View style={{marginTop: 20}}>
-              <Text style={styles.heading}>Diet Plans</Text>
-            </View>
-          </View>
-
-          <View style={{flexDirection: 'row'}}>
-            <Image
-              source={require('../images/test.png')}
+              onPress={() => this.props.navigation.navigate('Notification')}>
+              <Image
+                source={require('../images/navbar/bell.png')}
+                style={{
+                  width: 30,
+                  height: 30,
+                  alignSelf: 'center',
+                  justifyContent: 'center',
+                }}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
               style={{
-                width: 25,
-                height: 25,
-                marginTop: 5,
-                marginLeft: 10,
-                marginRight: 10,
+                marginLeft: 55,
+                marginRight: 20,
               }}
-            />
-            <Text
-              style={{
-                fontSize: 16,
-                color: '#B12F31',
-                marginTop: 6,
-                marginBottom: 10,
-                justifyContent: 'center',
-                alignSelf: 'center',
-              }}>
-              Please Fill the Following Form
-            </Text>
-          </View>
-
-          <View style={styles.textview1}>
-            <View style={{flexDirection: 'row'}}>
+              onPress={() => this.props.navigation.navigate('UserProfile')}
+              // onPress={() => this.props.navigation.navigate('Notification')}
+            >
               <Image
-                source={require('../images/height.png')}
+                source={require('../images/navbar/user.png')}
                 style={{
-                  width: 35,
-                  height: 35,
-                  marginTop: 5,
-                  marginLeft: 10,
-                  marginRight: 10,
-                }}
-              />
-              <TextInput
-                style={styles.inputfield}
-                // placeholderTextColor="black"
-                placeholder="Enter Height (In Feets)"
-                value={this.state.height}
-                onChangeText={this.setheight}
-              />
-            </View>
-            <View style={{flexDirection: 'row'}}>
-              <Image
-                source={require('../images/weight.png')}
-                style={{
-                  width: 35,
-                  height: 35,
-                  marginTop: 5,
-                  marginLeft: 10,
-                  marginRight: 10,
-                }}
-              />
-              <TextInput
-                style={styles.inputfield}
-                // placeholderTextColor="black"
-                placeholder="Enter Weight (In Kgs)"
-                value={this.state.weight}
-                onChangeText={this.setweight}
-              />
-            </View>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => this.calbmi()}>
-              <Text
-                style={{
-                  color: 'white',
-                  fontSize: 18,
-                  fontWeight: 'bold',
+                  width: 30,
+                  height: 30,
                   alignSelf: 'center',
                   justifyContent: 'center',
-                }}>
-                Submit
-              </Text>
+                }}
+              />
             </TouchableOpacity>
-          </View>
-          <View style={styles.textview}>
-            <View
-              style={{
-                width: 280,
-                height: 70,
-                marginBottom: 20,
-                backgroundColor: 'white',
-                alignSelf: 'center',
-              }}>
-              <Text>Your BMI VALUE IS {this.state.bmi}</Text>
-              <Text> {this.state.sugg}</Text>
-            </View>
-            <View style={{flexDirection: 'row'}}>
-              <Image
-                source={require('../images/adult.png')}
-                style={{
-                  width: 35,
-                  height: 45,
-                  marginTop: 5,
-                  marginLeft: 10,
-                  marginRight: 10,
-                }}
-              />
-              <TextInput
-                style={styles.inputfield}
-                placeholder="Enter Age Here"
-                value={this.state.age}
-                onChangeText={this.setage}
-              />
-            </View>
-            <View style={{flexDirection: 'row'}}>
-              <Image
-                source={require('../images/gender.png')}
-                style={{
-                  width: 35,
-                  height: 35,
-                  marginTop: 5,
-                  marginLeft: 10,
-                  marginRight: 10,
-                }}
-              />
-              <Picker
-                style={styles.inputfield}
-                //placeholder="Select an Option"
-                selectedValue={this.state.gender}
-                onValueChange={(itemValue, itemIndex) =>
-                  this.setState({gender: itemValue})
-                }>
-                <Picker.Item label="Selct a gender" value="" />
-
-                <Picker.Item label="Male" value="male" />
-                <Picker.Item label="Female" value="female" />
-              </Picker>
-            </View>
-            <View style={{flexDirection: 'row'}}>
-              <Image
-                source={require('../images/barbell.png')}
-                style={{
-                  width: 35,
-                  height: 35,
-                  marginTop: 5,
-                  marginLeft: 10,
-                  marginRight: 10,
-                }}
-              />
-              <Picker
-                style={styles.inputfield}
-                // placeholder="Select an Option"
-                selectedValue={this.state.activity}
-                onValueChange={(itemValue, itemIndex) =>
-                  this.setState({activity: itemValue})
-                }>
-                <Picker.Item label="Select Activity Level " value="" />
-                <Picker.Item
-                  label="Sedentary: Little or no exercise"
-                  value="sedentary"
-                />
-                <Picker.Item
-                  label="Light: Exercise 1-3 times/week"
-                  value="light"
-                />
-                <Picker.Item
-                  label="Active: Intense exercise 3-4 times/week"
-                  value="active"
-                />
-                <Picker.Item
-                  label="Very Active: Intense exercise 6-7 times/week"
-                  value="vactive"
-                />
-                <Picker.Item
-                  label="Extra Active: Very intense exercise daily"
-                  value="eactive"
-                />
-              </Picker>
-            </View>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => this.calintake()}>
-              <Text
-                style={{
-                  color: 'white',
-                  fontSize: 18,
-                  fontWeight: 'bold',
-                  alignSelf: 'center',
-                  justifyContent: 'center',
-                }}>
-                Calorie Intake
-              </Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.textview3}>
-            <Text
-              style={{
-                fontSize: 16,
-                color: '#B12F31',
-                marginTop: 6,
-                marginBottom: 10,
-                justifyContent: 'center',
-                alignSelf: 'center',
-              }}>
-              Some suggested Diet Plans for you
-            </Text>
-            <View style={styles.textview2}>
-              <Text style={{color: 'black', fontSize: 16, alignSelf: 'center'}}>
-                To Loose Weight
-              </Text>
-              <Text style={{color: 'black', fontSize: 16, alignSelf: 'center'}}>
-                You Need "{this.state.loose}" calories/day
-              </Text>
-              <Text style={{color: 'black', fontSize: 16, alignSelf: 'center'}}>
-                Tap To View Diet Plan
-              </Text>
-            </View>
-            <View style={styles.textview2}>
-              <Text style={{color: 'black', fontSize: 16, alignSelf: 'center'}}>
-                To Maintain Weight
-              </Text>
-              <Text style={{color: 'black', fontSize: 16, alignSelf: 'center'}}>
-                You Need {this.state.maintain} calories/day
-              </Text>
-              <Text style={{color: 'black', fontSize: 16, alignSelf: 'center'}}>
-                Tap To View Diet Plan
-              </Text>
-            </View>
-            <View style={styles.textview2}>
-              <Text style={{color: 'black', fontSize: 16, alignSelf: 'center'}}>
-                To Gain weight
-              </Text>
-              <Text style={{color: 'black', fontSize: 16, alignSelf: 'center'}}>
-                You Need {this.state.gain} calories/day
-              </Text>
-              <Text style={{color: 'black', fontSize: 16, alignSelf: 'center'}}>
-                Tap To View Diet Plan
-              </Text>
-            </View>
-            <View style={{flexDirection: 'row'}}>
-              <Image
-                source={require('../images/different.png')}
-                style={{
-                  width: 35,
-                  height: 35,
-                  marginTop: 5,
-                  marginLeft: 10,
-                  marginRight: 10,
-                }}
-              />
-              <Picker
-                style={styles.inputfield}
-                //placeholder="Select an Option"
-                selectedValue={this.state.goal}
-                onValueChange={(itemValue, itemIndex) =>
-                  this.setState({goal: itemValue})
-                }>
-                <Picker.Item label="Choose an option" value="" />
-
-                <Picker.Item label="To loose Weight" value={this.state.loose} />
-                <Picker.Item
-                  label="To Maintain Weight"
-                  value={this.state.maintain}
-                />
-                <Picker.Item label="To Gain Weight" value={this.state.gain} />
-              </Picker>
-            </View>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => this.submit()}>
-              <Text
-                style={{
-                  color: 'white',
-                  fontSize: 18,
-                  fontWeight: 'bold',
-                  alignSelf: 'center',
-                  justifyContent: 'center',
-                }}>
-                Get Dietplan
-              </Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.textview1}>
-            <Text style={{fontSize: 18, color: '#B12F31'}}>Breakfast</Text>
-            <Text style={{fontSize: 16}}>{this.state.diet_plan.breakfast}</Text>
-            <Text style={{fontSize: 18, color: '#B12F31'}}>Lunch</Text>
-            <Text style={{fontSize: 16}}> {this.state.diet_plan.lunch}</Text>
-            <Text style={{fontSize: 18, color: '#B12F31'}}>Dinner</Text>
-            <Text style={{fontSize: 16}}> {this.state.diet_plan.dinner}</Text>
-            <Text style={{fontSize: 18, color: '#B12F31'}}>Snake</Text>
-            <Text style={{fontSize: 16}}> {this.state.diet_plan.snack}</Text>
           </View>
         </View>
-      </ScrollView>
+      </View>
     );
   }
 }
@@ -571,5 +648,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignSelf: 'center',
     marginTop: 20,
+  },
+  footer: {
+    position: 'absolute',
+    backgroundColor: '#B12F31',
+
+    width: 360,
+    height: 60,
+    marginTop: 506,
   },
 });

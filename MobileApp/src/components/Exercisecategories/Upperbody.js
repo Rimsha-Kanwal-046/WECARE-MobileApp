@@ -11,7 +11,7 @@ export default class Upperbody extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>BURPEES</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/burpees1.gif')}
+                source={require('../../images/exercises/burpees1.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -44,7 +44,7 @@ export default class Upperbody extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>PUSH UPS</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/pushups.gif')}
+                source={require('../../images/exercises/pushups.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -75,7 +75,7 @@ export default class Upperbody extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>JUMPING JACKS</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/jumpingjacks.gif')}
+                source={require('../../images/exercises/jumpingjacks.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -106,7 +106,7 @@ export default class Upperbody extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>SIT UPS</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/situps.gif')}
+                source={require('../../images/exercises/situps.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -138,7 +138,7 @@ export default class Upperbody extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>SIDE PLANK</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/sideplank.jpg')}
+                source={require('../../images/exercises/sideplank.jpg')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -169,7 +169,7 @@ export default class Upperbody extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>PULL UPS</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/pullups.gif')}
+                source={require('../../images/exercises/pullups.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -201,7 +201,7 @@ export default class Upperbody extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>RUSSIAN TWISTS</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/russiantwist.gif')}
+                source={require('../../images/exercises/russiantwist.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,

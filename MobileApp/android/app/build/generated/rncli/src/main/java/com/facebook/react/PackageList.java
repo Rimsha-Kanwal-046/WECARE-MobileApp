@@ -14,8 +14,12 @@ import java.util.ArrayList;
 import com.wecare.BuildConfig;
 import com.wecare.R;
 
+// @react-native-community/geolocation
+import com.reactnativecommunity.geolocation.GeolocationPackage;
 // @react-native-community/masked-view
 import org.reactnative.maskedview.RNCMaskedViewPackage;
+// react-native-appearance
+import io.expo.appearance.RNCAppearancePackage;
 // react-native-firebase
 import io.invertase.firebase.RNFirebasePackage;
 // react-native-geolocation-service
@@ -85,7 +89,9 @@ public class PackageList {
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(mConfig),
+      new GeolocationPackage(),
       new RNCMaskedViewPackage(),
+      new RNCAppearancePackage(),
       new RNFirebasePackage(),
       new RNFusedLocationPackage(),
       new RNGestureHandlerPackage(),

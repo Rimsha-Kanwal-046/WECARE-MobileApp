@@ -1,25 +1,8 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Nimra Iftikhar\\Documents\\final fyp\\app\\wecare\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sv\\values-sv.xml",
+            "outputFile": "D:\\FYP\\WECARE-MobileApp\\MobileApp\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sv\\values-sv.xml",
             "map": [
-                {
-                    "source": "C:\\Users\\Nimra Iftikhar\\.gradle\\caches\\transforms-2\\files-2.1\\1c381ac3e12c91b40d3d2cbbed1a0fda\\res\\values-sv\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "207",
-                        "endColumns": "101",
-                        "endOffsets": "308"
-                    },
-                    "to": {
-                        "startLines": "47",
-                        "startColumns": "4",
-                        "startOffsets": "5473",
-                        "endColumns": "105",
-                        "endOffsets": "5574"
-                    }
-                },
                 {
                     "source": "C:\\Users\\Nimra Iftikhar\\.gradle\\caches\\transforms-2\\files-2.1\\351599597ffd0ed10a9f963c31c60224\\res\\values-sv\\values.xml",
                     "from": {
@@ -35,6 +18,23 @@
                         "startOffsets": "5579",
                         "endColumns": "102",
                         "endOffsets": "5677"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Nimra Iftikhar\\.gradle\\caches\\transforms-2\\files-2.1\\d165bd8027c65edff2e91cbce5d3e2d6\\res\\values-sv\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "207",
+                        "endColumns": "101",
+                        "endOffsets": "308"
+                    },
+                    "to": {
+                        "startLines": "47",
+                        "startColumns": "4",
+                        "startOffsets": "5473",
+                        "endColumns": "105",
+                        "endOffsets": "5574"
                     }
                 },
                 {
@@ -89,7 +89,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Nimra Iftikhar\\.gradle\\caches\\transforms-2\\files-2.1\\558fafc50bb2d5593f47b5f72557f35c\\res\\values-sv\\values.xml",
+                    "source": "C:\\Users\\Nimra Iftikhar\\.gradle\\caches\\transforms-2\\files-2.1\\764e433fde3a507fea270d12c70234ee\\res\\values-sv\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

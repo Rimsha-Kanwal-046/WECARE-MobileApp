@@ -1,23 +1,23 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Nimra Iftikhar\\Documents\\final fyp\\app\\wecare\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ml\\values-ml.xml",
+            "outputFile": "D:\\FYP\\WECARE-MobileApp\\MobileApp\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ml\\values-ml.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Nimra Iftikhar\\.gradle\\caches\\transforms-2\\files-2.1\\558fafc50bb2d5593f47b5f72557f35c\\res\\values-ml\\values.xml",
+                    "source": "C:\\Users\\Nimra Iftikhar\\.gradle\\caches\\transforms-2\\files-2.1\\d165bd8027c65edff2e91cbce5d3e2d6\\res\\values-ml\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "218",
-                        "endOffsets": "465"
+                        "startOffsets": "207",
+                        "endColumns": "98",
+                        "endOffsets": "305"
                     },
                     "to": {
-                        "startLines": "37",
+                        "startLines": "47",
                         "startColumns": "4",
-                        "startOffsets": "4070",
-                        "endColumns": "218",
-                        "endOffsets": "4284"
+                        "startOffsets": "5704",
+                        "endColumns": "102",
+                        "endOffsets": "5802"
                     }
                 },
                 {
@@ -89,20 +89,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Nimra Iftikhar\\.gradle\\caches\\transforms-2\\files-2.1\\1c381ac3e12c91b40d3d2cbbed1a0fda\\res\\values-ml\\values.xml",
+                    "source": "C:\\Users\\Nimra Iftikhar\\.gradle\\caches\\transforms-2\\files-2.1\\764e433fde3a507fea270d12c70234ee\\res\\values-ml\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
-                        "startOffsets": "207",
-                        "endColumns": "98",
-                        "endOffsets": "305"
+                        "startOffsets": "247",
+                        "endColumns": "218",
+                        "endOffsets": "465"
                     },
                     "to": {
-                        "startLines": "47",
+                        "startLines": "37",
                         "startColumns": "4",
-                        "startOffsets": "5704",
-                        "endColumns": "102",
-                        "endOffsets": "5802"
+                        "startOffsets": "4070",
+                        "endColumns": "218",
+                        "endOffsets": "4284"
                     }
                 }
             ]

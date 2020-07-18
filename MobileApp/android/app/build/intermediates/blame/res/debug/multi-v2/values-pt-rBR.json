@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Nimra Iftikhar\\Documents\\final fyp\\app\\wecare\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rBR\\values-pt-rBR.xml",
+            "outputFile": "D:\\FYP\\WECARE-MobileApp\\MobileApp\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rBR\\values-pt-rBR.xml",
             "map": [
+                {
+                    "source": "C:\\Users\\Nimra Iftikhar\\.gradle\\caches\\transforms-2\\files-2.1\\764e433fde3a507fea270d12c70234ee\\res\\values-pt-rBR\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "251",
+                        "endColumns": "203",
+                        "endOffsets": "454"
+                    },
+                    "to": {
+                        "startLines": "37",
+                        "startColumns": "4",
+                        "startOffsets": "4013",
+                        "endColumns": "203",
+                        "endOffsets": "4212"
+                    }
+                },
                 {
                     "source": "C:\\Users\\Nimra Iftikhar\\.gradle\\caches\\transforms-2\\files-2.1\\a682247b69dca6fa0c2823240cb786ad\\res\\values-pt-rBR\\values-pt-rBR.xml",
                     "from": {
@@ -38,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Nimra Iftikhar\\.gradle\\caches\\transforms-2\\files-2.1\\1c381ac3e12c91b40d3d2cbbed1a0fda\\res\\values-pt-rBR\\values.xml",
+                    "source": "C:\\Users\\Nimra Iftikhar\\.gradle\\caches\\transforms-2\\files-2.1\\d165bd8027c65edff2e91cbce5d3e2d6\\res\\values-pt-rBR\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -52,23 +69,6 @@
                         "startOffsets": "5594",
                         "endColumns": "106",
                         "endOffsets": "5696"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Nimra Iftikhar\\.gradle\\caches\\transforms-2\\files-2.1\\558fafc50bb2d5593f47b5f72557f35c\\res\\values-pt-rBR\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "251",
-                        "endColumns": "203",
-                        "endOffsets": "454"
-                    },
-                    "to": {
-                        "startLines": "37",
-                        "startColumns": "4",
-                        "startOffsets": "4013",
-                        "endColumns": "203",
-                        "endOffsets": "4212"
                     }
                 },
                 {
