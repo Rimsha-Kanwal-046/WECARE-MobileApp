@@ -24,6 +24,16 @@ export default class Login extends Component {
             Signup
           </Text>
         </View>
+        <Text
+          onPress={() => this.props.navigation.navigate('Home')}
+          style={{
+            marginLeft: 200,
+            marginBottom: 10,
+            color: 'white',
+            fontSize: 20,
+          }}>
+          SKIP
+        </Text>
       </View>
     );
   }

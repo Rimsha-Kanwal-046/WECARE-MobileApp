@@ -11,7 +11,7 @@ export default class Lowerbody extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>SQUATS</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/squats.gif')}
+                source={require('../../images/exercises/squats.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -43,7 +43,7 @@ export default class Lowerbody extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>JUMPING JACKS</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/jumpingjacks.gif')}
+                source={require('../../images/exercises/jumpingjacks.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -75,7 +75,7 @@ export default class Lowerbody extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>STEP UPS</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/stepups.gif')}
+                source={require('../../images/exercises/stepups.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -107,7 +107,7 @@ export default class Lowerbody extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>BICYCLE CRUNCHES</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/bicyclecrunches.gif')}
+                source={require('../../images/exercises/bicyclecrunches.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,

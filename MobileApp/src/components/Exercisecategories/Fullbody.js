@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, ScrollView, Image} from 'react-native';
+import {Text, View, StyleSheet, ScrollView, Linking, Image} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 export default class Fullbody extends Component {
   render() {
@@ -11,7 +12,7 @@ export default class Fullbody extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>BURPEES</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/burpees1.gif')}
+                source={require('../../images/exercises/burpees1.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -38,12 +39,30 @@ export default class Fullbody extends Component {
                   Burn 10-15 calorie per min. A normal person should do 15-20
                   burpees a day.
                 </Text>
+                <TouchableOpacity
+                  style={{
+                    backgroundColor: 'red',
+                    width: 150,
+                    height: 30,
+                    alignSelf: 'center',
+                    borderRadius: 20,
+                  }}
+                  onPress={() =>
+                    Linking.openURL(
+                      'https://www.youtube.com/watch?v=dZgVxmf6jkA',
+                    )
+                  }>
+                  <Text
+                    style={{fontSize: 20, color: 'white', alignSelf: 'center'}}>
+                    Video Link
+                  </Text>
+                </TouchableOpacity>
               </View>
             </View>
             <View style={styles.view}>
               <Text style={styles.heading}>SQUATS</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/squats.gif')}
+                source={require('../../images/exercises/squats.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -69,12 +88,30 @@ export default class Fullbody extends Component {
                   Roughly 10 calories are burned for every minute of squats
                   performed. A normal person should do 15-20 squats a day.
                 </Text>
+                <TouchableOpacity
+                  style={{
+                    backgroundColor: 'red',
+                    width: 150,
+                    height: 30,
+                    alignSelf: 'center',
+                    borderRadius: 20,
+                  }}
+                  onPress={() =>
+                    Linking.openURL(
+                      'https://www.youtube.com/watch?v=aclHkVaku9U',
+                    )
+                  }>
+                  <Text
+                    style={{fontSize: 20, color: 'white', alignSelf: 'center'}}>
+                    Video Link
+                  </Text>
+                </TouchableOpacity>
               </View>
             </View>
             <View style={styles.view}>
               <Text style={styles.heading}>PLANK</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/plank.jpg')}
+                source={require('../../images/exercises/plank.jpg')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -101,12 +138,30 @@ export default class Fullbody extends Component {
                   performed. Do a plank of 2 to 5 min daily accroding to your
                   stamina.
                 </Text>
+                <TouchableOpacity
+                  style={{
+                    backgroundColor: 'red',
+                    width: 150,
+                    height: 30,
+                    alignSelf: 'center',
+                    borderRadius: 20,
+                  }}
+                  onPress={() =>
+                    Linking.openURL(
+                      'https://www.youtube.com/watch?v=pvIjsG5Svck',
+                    )
+                  }>
+                  <Text
+                    style={{fontSize: 20, color: 'white', alignSelf: 'center'}}>
+                    Video Link
+                  </Text>
+                </TouchableOpacity>
               </View>
             </View>
             <View style={styles.view}>
               <Text style={styles.heading}>PUSH UPS</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/pushups.gif')}
+                source={require('../../images/exercises/pushups.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -132,12 +187,30 @@ export default class Fullbody extends Component {
                   Roughly 7-8 calories are burned for every minute of push ups
                   performed. Do set of 10 pushups daily.
                 </Text>
+                <TouchableOpacity
+                  style={{
+                    backgroundColor: 'red',
+                    width: 150,
+                    height: 30,
+                    alignSelf: 'center',
+                    borderRadius: 20,
+                  }}
+                  onPress={() =>
+                    Linking.openURL(
+                      'https://www.youtube.com/watch?v=aclHkVaku9U',
+                    )
+                  }>
+                  <Text
+                    style={{fontSize: 20, color: 'white', alignSelf: 'center'}}>
+                    Video Link
+                  </Text>
+                </TouchableOpacity>
               </View>
             </View>
             <View style={styles.view}>
               <Text style={styles.heading}>JUMPING JACKS</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/jumpingjacks.gif')}
+                source={require('../../images/exercises/jumpingjacks.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -163,12 +236,30 @@ export default class Fullbody extends Component {
                   Roughly 15-17 calories are burned for every minute of exercise
                   performed.
                 </Text>
+                <TouchableOpacity
+                  style={{
+                    backgroundColor: 'red',
+                    width: 150,
+                    height: 30,
+                    alignSelf: 'center',
+                    borderRadius: 20,
+                  }}
+                  onPress={() =>
+                    Linking.openURL(
+                      'https://www.youtube.com/watch?v=aclHkVaku9U',
+                    )
+                  }>
+                  <Text
+                    style={{fontSize: 20, color: 'white', alignSelf: 'center'}}>
+                    Video Link
+                  </Text>
+                </TouchableOpacity>
               </View>
             </View>
             <View style={styles.view}>
               <Text style={styles.heading}>SIT UPS</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/situps.gif')}
+                source={require('../../images/exercises/situps.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -194,12 +285,30 @@ export default class Fullbody extends Component {
                   Roughly 7-10 calories are burned for every minute of exercise
                   performed.
                 </Text>
+                <TouchableOpacity
+                  style={{
+                    backgroundColor: 'red',
+                    width: 150,
+                    height: 30,
+                    alignSelf: 'center',
+                    borderRadius: 20,
+                  }}
+                  onPress={() =>
+                    Linking.openURL(
+                      'https://www.youtube.com/watch?v=aclHkVaku9U',
+                    )
+                  }>
+                  <Text
+                    style={{fontSize: 20, color: 'white', alignSelf: 'center'}}>
+                    Video Link
+                  </Text>
+                </TouchableOpacity>
               </View>
             </View>
             <View style={styles.view}>
               <Text style={styles.heading}>STEP UPS</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/stepups.gif')}
+                source={require('../../images/exercises/stepups.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -226,12 +335,30 @@ export default class Fullbody extends Component {
                   Roughly 14 calories are burned for every minute of step ups
                   performed.
                 </Text>
+                <TouchableOpacity
+                  style={{
+                    backgroundColor: 'red',
+                    width: 150,
+                    height: 30,
+                    alignSelf: 'center',
+                    borderRadius: 20,
+                  }}
+                  onPress={() =>
+                    Linking.openURL(
+                      'https://www.youtube.com/watch?v=aclHkVaku9U',
+                    )
+                  }>
+                  <Text
+                    style={{fontSize: 20, color: 'white', alignSelf: 'center'}}>
+                    Video Link
+                  </Text>
+                </TouchableOpacity>
               </View>
             </View>
             <View style={styles.view}>
               <Text style={styles.heading}>BICYCLE CRUNCHES</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/bicyclecrunches.gif')}
+                source={require('../../images/exercises/bicyclecrunches.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -257,12 +384,30 @@ export default class Fullbody extends Component {
                   Roughly 10-15 calories are burned for every minute of exercise
                   performed.
                 </Text>
+                <TouchableOpacity
+                  style={{
+                    backgroundColor: 'red',
+                    width: 150,
+                    height: 30,
+                    alignSelf: 'center',
+                    borderRadius: 20,
+                  }}
+                  onPress={() =>
+                    Linking.openURL(
+                      'https://www.youtube.com/watch?v=aclHkVaku9U',
+                    )
+                  }>
+                  <Text
+                    style={{fontSize: 20, color: 'white', alignSelf: 'center'}}>
+                    Video Link
+                  </Text>
+                </TouchableOpacity>
               </View>
             </View>
             <View style={styles.view}>
               <Text style={styles.heading}>SIDE PLANK</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/sideplank.jpg')}
+                source={require('../../images/exercises/sideplank.jpg')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -288,12 +433,30 @@ export default class Fullbody extends Component {
                   Roughly 3-4 calories are burned for every minute of exercise
                   performed.
                 </Text>
+                <TouchableOpacity
+                  style={{
+                    backgroundColor: 'red',
+                    width: 150,
+                    height: 30,
+                    alignSelf: 'center',
+                    borderRadius: 20,
+                  }}
+                  onPress={() =>
+                    Linking.openURL(
+                      'https://www.youtube.com/watch?v=aclHkVaku9U',
+                    )
+                  }>
+                  <Text
+                    style={{fontSize: 20, color: 'white', alignSelf: 'center'}}>
+                    Video Link
+                  </Text>
+                </TouchableOpacity>
               </View>
             </View>
             <View style={styles.view}>
               <Text style={styles.heading}>PULL UPS</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/pullups.gif')}
+                source={require('../../images/exercises/pullups.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -319,12 +482,30 @@ export default class Fullbody extends Component {
                   Roughly 20-25 calories are burned for every minute of pull ups
                   performed.
                 </Text>
+                <TouchableOpacity
+                  style={{
+                    backgroundColor: 'red',
+                    width: 150,
+                    height: 30,
+                    alignSelf: 'center',
+                    borderRadius: 20,
+                  }}
+                  onPress={() =>
+                    Linking.openURL(
+                      'https://www.youtube.com/watch?v=aclHkVaku9U',
+                    )
+                  }>
+                  <Text
+                    style={{fontSize: 20, color: 'white', alignSelf: 'center'}}>
+                    Video Link
+                  </Text>
+                </TouchableOpacity>
               </View>
             </View>
             <View style={styles.view}>
               <Text style={styles.heading}>HEEL TOUCHES</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/heeltouches.gif')}
+                source={require('../../images/exercises/heeltouches.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -355,7 +536,7 @@ export default class Fullbody extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>RUSSIAN TWISTS</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/russiantwist.gif')}
+                source={require('../../images/exercises/russiantwist.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -380,6 +561,24 @@ export default class Fullbody extends Component {
                   Roughly 8-10 calories are burned for every minute of exercise
                   performed.
                 </Text>
+                <TouchableOpacity
+                  style={{
+                    backgroundColor: 'red',
+                    width: 150,
+                    height: 30,
+                    alignSelf: 'center',
+                    borderRadius: 20,
+                  }}
+                  onPress={() =>
+                    Linking.openURL(
+                      'https://www.youtube.com/watch?v=aclHkVaku9U',
+                    )
+                  }>
+                  <Text
+                    style={{fontSize: 20, color: 'white', alignSelf: 'center'}}>
+                    Video Link
+                  </Text>
+                </TouchableOpacity>
               </View>
             </View>
           </ScrollView>
@@ -410,7 +609,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'black',
     width: 320,
-    height: 430,
+    height: 480,
     marginLeft: 18,
     marginTop: 40,
     marginBottom: 10,

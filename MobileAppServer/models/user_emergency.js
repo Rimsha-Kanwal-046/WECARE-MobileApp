@@ -26,35 +26,14 @@ const EmergencySchema = new mongoose.Schema({
   receiver_device: {
     type: String,
   },
-  // receiver1_id: {
-  //   type: Schema.Types.ObjectId,
-  // },
-  // receiver1_name: {
-  //   type: String,
-  // },
-  // receiver1_device: {
-  //   type: String,
-  // },
-  // receiver2_id: {
-  //   type: String,
-  // },
-  // receiver2_name: {
-  //   type: String,
-  // },
-  // receiver2_device: {
-  //   type: String,
-  // },
-  // receiver3_id: {
-  //   type: String,
-  // },
-  // receiver3_name: {
-  //   type: String,
-  // },
-  // receiver3_device: {
-  //   type: String,
-  // },
-  // status: {
-  //   type: String,
-  // },
+  date: {
+    type: String,
+  },
+  time: {
+    type: String,
+  },
+  emergencytype: {
+    type: String,
+  },
 });
 module.exports = emegency = mongoose.model('emergency', EmergencySchema);

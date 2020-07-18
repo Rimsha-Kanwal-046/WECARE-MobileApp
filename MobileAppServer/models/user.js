@@ -4,49 +4,61 @@ const Schema = mongoose.Schema;
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   email: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
   },
   password: {
     type: String,
-    required: true
+    required: true,
   },
   location: {
     latitude: {
-      type: Number
+      type: Number,
     },
     longitude: {
-      type: Number
-    }
+      type: Number,
+    },
   },
   device_id: {
-    type: String
+    type: String,
   },
 
   emergencyno: {
     name1: {
-      type: String
+      type: String,
     },
     num1: {
-      type: String
+      type: String,
     },
     name2: {
-      type: String
+      type: String,
     },
     num2: {
-      type: String
+      type: String,
     },
     name3: {
-      type: String
+      type: String,
     },
     num3: {
-      type: String
-    }
-  }
+      type: String,
+    },
+    name4: {
+      type: String,
+    },
+    num4: {
+      type: String,
+    },
+    name5: {
+      type: String,
+    },
+    num5: {
+      type: String,
+    },
+  },
 
   //emergencyno: [String]
   // emergencyno:

@@ -7,7 +7,7 @@ export default class logout extends Component {
     try {
       await AsyncStorage.removeItem('token');
       alert('Logout Success!');
-      () => this.props.navigation.navigate('Login');
+      this.props.navigation.navigate('Login');
     } catch (error) {
       alert('AsyncStorage error: ' + error.message);
     }

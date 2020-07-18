@@ -15,6 +15,9 @@ router.post('/', async (req, res) => {
     receiver_id,
     receiver_name,
     receiver_device,
+    date,
+    time,
+    emergencytype,
   } = req.body;
   try {
     emergency = new Emergency({
@@ -27,9 +30,13 @@ router.post('/', async (req, res) => {
       receiver_id: receiver_id,
       receiver_name: receiver_name,
       receiver_device: receiver_device,
+      date: date,
+      time: time,
+      emergencytype: emergencytype,
     });
     emergency.save();
     res.json(emergency);
+    console.log('new request received');
     console.log(emergency);
   } catch (err) {
     console.error(err.message);
@@ -93,25 +100,34 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.post('/getnot', auth, async (req, res) => {
-  console.log('req Request Received');
-  console.log(req.body.receiver1_id);
-  const id = req.body.receiver1_id;
-  //console.log(_id);
-  try {
-    const emergency = await Emergency.findById({ _id: id });
-    res.json(emergency);
-    console.log(emergency);
-  } catch (error) {
-    console.log(error);
-  }
-});
-
+/////////receiver notifications/////////
 router.get('/:receiver_name', function (req, res, next) {
   const query = req.params.receiver_name;
 
   Emergency.find({
     receiver_name: query,
+  })
+    .populate('Emergency')
+    .exec(function (error, results) {
+      if (error) {
+        return next(error);
+      }
+      // If valid user was not found, send 404
+      if (!results) {
+        res.status(404).send('No Record Found');
+      } else {
+        // Respond with valid data
+        res.json(results);
+      }
+    });
+});
+
+/////////sender notifications///////////////
+router.get('/a/:sender_name', function (req, res, next) {
+  const query = req.params.sender_name;
+
+  Emergency.find({
+    sender_name: query,
   })
     .populate('Emergency')
     .exec(function (error, results) {

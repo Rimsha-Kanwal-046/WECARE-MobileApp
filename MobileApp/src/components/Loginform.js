@@ -32,7 +32,7 @@ export default class Loginform extends Component {
   };
 
   submitForm = () => {
-    fetch('http://192.168.1.3:1000/api/Auth', {
+    fetch('http://192.168.1.100:1000/api/Auth', {
       method: 'POST',
       headers: {
         Accept: 'application/json',

@@ -21,8 +21,12 @@ router.post('/', auth, async (req, res) => {
           name2: emergencyno.name2,
           num2: emergencyno.num2,
           name3: emergencyno.name3,
-          num3: emergencyno.num3
-        }
+          num3: emergencyno.num3,
+          name4: emergencyno.name4,
+          num4: emergencyno.num4,
+          name5: emergencyno.name5,
+          num5: emergencyno.num5,
+        },
       }
     );
 

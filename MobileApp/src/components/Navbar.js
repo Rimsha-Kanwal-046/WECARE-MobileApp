@@ -21,8 +21,7 @@ export default class Navbar extends Component {
             style={{
               marginLeft: 5,
               marginRight: 40,
-            }}
-            onPress={alert('hi')}>
+            }}>
             <Image
               source={require('../images/navbar/home.png')}
               style={{
@@ -78,13 +77,9 @@ const styles = StyleSheet.create({
   footer: {
     position: 'absolute',
     backgroundColor: '#B12F31',
-    // borderRadius: 3,
-    // borderWidth: 1,
 
     width: 360,
     height: 60,
     marginTop: 506,
-
-    //justifyContent: 'flex-end',
   },
 });

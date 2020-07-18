@@ -11,7 +11,7 @@ export default class Absexercises extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>BICYCLE CRUNCHES</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/bicyclecrunches.gif')}
+                source={require('../../images/exercises/bicyclecrunches.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -42,7 +42,7 @@ export default class Absexercises extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>RUSSIAN TWISTS</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/russiantwist.gif')}
+                source={require('../../images/exercises/russiantwist.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -72,7 +72,7 @@ export default class Absexercises extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>BURPEES</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/burpees1.gif')}
+                source={require('../../images/exercises/burpees1.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -105,7 +105,7 @@ export default class Absexercises extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>PLANK</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/plank.jpg')}
+                source={require('../../images/exercises/plank.jpg')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -138,7 +138,7 @@ export default class Absexercises extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>SIT UPS</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/situps.gif')}
+                source={require('../../images/exercises/situps.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -170,7 +170,7 @@ export default class Absexercises extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>PULL UPS</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/pullups.gif')}
+                source={require('../../images/exercises/pullups.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -201,7 +201,7 @@ export default class Absexercises extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>HEEL TOUCHES</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/heeltouches.gif')}
+                source={require('../../images/exercises/heeltouches.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,

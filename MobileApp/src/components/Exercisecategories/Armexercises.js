@@ -11,7 +11,7 @@ export default class Armexercises extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>PLANK</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/plank.jpg')}
+                source={require('../../images/exercises/plank.jpg')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -44,7 +44,7 @@ export default class Armexercises extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>SIDE PLANK</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/sideplank.jpg')}
+                source={require('../../images/exercises/sideplank.jpg')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -75,7 +75,7 @@ export default class Armexercises extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>PULL UPS</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/pullups.gif')}
+                source={require('../../images/exercises/pullups.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -107,7 +107,7 @@ export default class Armexercises extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>FOREARM PLANK REACHOUT</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/plankreachout.gif')}
+                source={require('../../images/exercises/plankreachout.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -138,7 +138,7 @@ export default class Armexercises extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>PLANK UP DOWN</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/plank-up-down.gif')}
+                source={require('../../images/exercises/plank-up-down.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,
@@ -168,7 +168,7 @@ export default class Armexercises extends Component {
             <View style={styles.view}>
               <Text style={styles.heading}>JUMPING JACKS</Text>
               <Image
-                source={require('/Users/Nimra Iftikhar/Documents/final fyp/app/wecare/src/images/exercises/jumpingjacks.gif')}
+                source={require('../../images/exercises/jumpingjacks.gif')}
                 style={{
                   marginRight: 5,
                   marginLeft: 5,

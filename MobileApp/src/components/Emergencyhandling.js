@@ -38,7 +38,7 @@ export default class Highemergency extends Component {
   //         FCMToken: FCM,
   //       });
 
-  //       fetch('http://192.168.43.64:1000/api/Device_id', {
+  //       fetch('http://192.168.1.100:1000/api/Device_id', {
   //         method: 'POST',
   //         headers: {
   //           Accept: 'application/json',
@@ -60,7 +60,6 @@ export default class Highemergency extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.heading}>Emergency Requests</Text>
         <TouchableOpacity
           onPress={() => this.props.navigation.navigate('Emergencyrequest')}>
           <View style={styles.textview}>
@@ -86,7 +85,7 @@ export default class Highemergency extends Component {
           </View>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => this.props.navigation.navigate('Emergencyno')}>
+          onPress={() => this.props.navigation.navigate('Emergencynumbers')}>
           <View style={styles.textview}>
             <Image
               source={require('../images/contact.png')}
@@ -123,6 +122,69 @@ export default class Highemergency extends Component {
             </Text>
           </View>
         </TouchableOpacity>
+        <View style={{marginRight: 360, marginTop: 15}}>
+          <View style={styles.footer}>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'center',
+                alignContent: 'center',
+
+                marginTop: 10,
+              }}>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('Home')}
+                style={{
+                  marginLeft: 5,
+                  marginRight: 40,
+                }}>
+                <Image
+                  source={require('../images/navbar/home.png')}
+                  style={{
+                    width: 30,
+                    height: 30,
+                    alignSelf: 'center',
+                    justifyContent: 'center',
+                  }}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={{
+                  marginLeft: 55,
+                  marginRight: 40,
+                }}
+                onPress={() => this.props.navigation.navigate('Notification')}>
+                <Image
+                  source={require('../images/navbar/bell.png')}
+                  style={{
+                    width: 30,
+                    height: 30,
+                    alignSelf: 'center',
+                    justifyContent: 'center',
+                  }}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={{
+                  marginLeft: 55,
+                  marginRight: 20,
+                }}
+                onPress={() => this.props.navigation.navigate('UserProfile')}
+                // onPress={() => this.props.navigation.navigate('Notification')}
+              >
+                <Image
+                  source={require('../images/navbar/user.png')}
+                  style={{
+                    width: 30,
+                    height: 30,
+                    alignSelf: 'center',
+                    justifyContent: 'center',
+                  }}
+                />
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
       </View>
     );
   }
@@ -137,7 +199,7 @@ const styles = StyleSheet.create({
   },
   heading: {
     flex: 0.7,
-    fontSize: 30,
+    fontSize: 22,
     marginBottom: 44,
     marginTop: 44,
     color: '#B12F31',
@@ -180,7 +242,7 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     width: 300,
     height: 130,
-    marginTop: 7,
+    marginTop: 5,
     marginBottom: 10,
     justifyContent: 'center',
     flexDirection: 'row',
@@ -192,9 +254,19 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     width: 160,
     height: 100,
-    marginTop: 7,
-    marginBottom: 7,
+    marginTop: 5,
+    marginBottom: 5,
     marginHorizontal: 10,
+    justifyContent: 'center',
+  },
+  footer: {
+    position: 'absolute',
+    backgroundColor: '#B12F31',
+
+    width: 360,
+    height: 60,
+    // marginTop: 506,
+
     justifyContent: 'center',
   },
 });
